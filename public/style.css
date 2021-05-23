@@ -1,0 +1,16 @@
+body{
+display: flex;
+flex-direction: column;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black; 
+}

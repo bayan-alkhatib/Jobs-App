@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/search">Search</a>
+        <a href="/mylist">My List</a>
+    </header>
+    <main>
+            <section>
+                <ul>
+                    <li>title: <%=details.title%></li>
+                    <li>company: <%=details.company%></li>
+                    <li>location: <%=details.location%></li>
+                    <li>url: <%=details.url%></li>
+                    <li>description: <%=details.description%></li>
+                </ul>
+                <form action="/delete/<%=details.id%>?_method=delete" method="POST">
+                    <button>delete</button>
+                </form>
+                <button id='updateBtn'>update</button>
+                <form action="/update/<%=details.id%>?_method=put" method="POST" id='updateForm'>
+                    <input type="hidden" name='id' value='<%=details.id%>'>
+                    <input type="text" name='title' value='<%=details.title%>'>
+                    <input type="text" name='company' value='<%=details.company%>'>
+                    <input type="text" name='location' value='<%=details.location%>'>
+                    <input type="text" name='url' value='<%=details.url%>'>
+                    <input type="text" name='description' value='<%=details.description%>'>
+                    <button>update</button>
+                </form>
+            </section>
+    </main>
+</body>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='/app.js'></script>
+</html>
