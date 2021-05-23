@@ -25,9 +25,9 @@ server.use(methodOverride('_method'));
 
 server.set('view engine','ejs');
 
-let client= new pg.Client(process.env.DATABASE_URL);
+// let client= new pg.Client(process.env.DATABASE_URL);
 
-// let client =new pg.Client({connectionString:process.env.DATABASE_URL,ssl:{rejectUnauthorized:false}});
+let client =new pg.Client({connectionString:process.env.DATABASE_URL,ssl:{rejectUnauthorized:false}});
 
 function homepageHan(req,res){
   let apiUrl=`https://jobs.github.com/positions.json?location=usa`;
